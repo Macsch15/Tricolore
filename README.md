@@ -1,4 +1,4 @@
-## Aurora 
+## Aurora [![Build Status](https://travis-ci.org/Macsch15/Aurora.svg?branch=master)](https://travis-ci.org/Macsch15/Aurora) [![StyleCI](https://github.styleci.io/repos/21590926/shield?branch=master)](https://github.styleci.io/repos/21590926)
 ##### Community environment project
 
 ------------
