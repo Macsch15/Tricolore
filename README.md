@@ -1,6 +1,6 @@
 # Tricolore [![Build Status](https://img.shields.io/travis/Macsch15/Tricolore.svg?style=flat-square)](https://travis-ci.org/Macsch15/Tricolore) [![Coverage Status](https://img.shields.io/coveralls/Macsch15/Tricolore.svg?style=flat-square)](https://coveralls.io/r/Macsch15/Tricolore?branch=master)
 
-#### Discussion software
+#### Community environment
 *Work in progress...*
 
 ### Environment requirements
