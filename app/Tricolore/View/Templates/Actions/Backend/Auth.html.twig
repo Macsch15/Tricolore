@@ -1,0 +1,23 @@
+{% extends "BaseBlockOnlyAssets.html.twig" %}
+
+{% block head_title %}{% trans %}AdminCP Authorization{% endtrans %}{% endblock %}
+{% block container_class %}backend-auth-panel-width{% endblock %}
+
+{% block body_content %}
+  <div class="backend-auth-panel-top-space">
+    <h1>{% trans %}AdminCP Authorization{% endtrans %}</h1>
+
+    <div class="backend-auth-panel-background">
+      {% if is_valid %}
+        <div class="alert alert-success" role="alert"><i class="fa fa-check"></i> Welcome to AdminCP</div>
+      {% endif %}
+
+      <form action="{{ url('admincp_auth') }}" method="post" {{ form_enctype(form) }}>
+          {{ form_widget(form) }}<br />
+          <button type="submit" class="btn btn-primary backend-auth-button-continue full-width">{% trans %}Log in{% endtrans %}</button>
+      </form>
+      <br />
+      <a href="{{ url('home') }}"><span class="ion-arrow-return-left"></span> Return to homepage</a>
+    </div>
+  </div>
+{% endblock %}

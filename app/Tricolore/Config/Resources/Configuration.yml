@@ -1,0 +1,51 @@
+prod:
+    base.full_url: "http://localhost"
+    base.locale: "en"
+    base.charset: "utf-8"
+
+    router.host: ~
+    router.use_httpd_rewrite: true
+
+    cookie.path: ~
+    cookie.domain: ~
+    cookie.secure: false
+
+    trans.locale: "en_EN"
+
+    gzip.enabled: true
+
+    directory.storage: "storage"
+    directory.assets: "static"
+
+dev:
+    base.full_url: "http://localhost/Tricolore/develop"
+    base.locale: "en"
+    base.charset: "utf-8"
+
+    router.host: ~
+    router.use_httpd_rewrite: true
+
+    cookie.path: ~
+    cookie.domain: ~
+    cookie.secure: false
+
+    trans.locale: "en_EN"
+
+    gzip.enabled: false
+
+    directory.storage: "storage"
+    directory.assets: "static"
+
+test:
+    base.full_url: "http://localhost/Tricolore/tests"
+    base.locale: "en"
+    base.charset: "utf-8"
+
+    router.use_httpd_rewrite: false
+
+    trans.locale: "en_EN"
+
+    test.int: 5874
+
+    directory.storage: "storage"
+    directory.assets: "static"

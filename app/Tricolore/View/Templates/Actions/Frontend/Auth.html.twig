@@ -1,0 +1,33 @@
+{% extends "BaseBlock.html.twig" %}
+
+{% block head_title %}{% trans %}Authorization{% endtrans %}{% endblock %}
+{% block container_class %}frontend-auth-panel-width{% endblock %}
+
+{% block breadcrumb %}
+  {{ breadcrumb.addChild("Authorization"|trans) }}
+{% endblock %}
+
+{% block body_content %}
+  <div class="frontend-auth-panel-top-space">
+    <h1>{% trans %}Authorization{% endtrans %}</h1>
+
+    <div class="frontend-auth-panel-background">
+      {% if is_valid %}
+        <div class="alert alert-success" role="alert"><i class="fa fa-check"></i> Bazzinga!</div>
+      {% endif %}
+
+      <form action="{{ url('auth') }}" method="post" {{ form_enctype(form) }}>
+          {{ form_widget(form) }}
+
+          <div class="reset-password-link">
+            <a href="#">{% trans %}Forgot your password?{% endtrans %}</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary frontend-auth-button-continue full-width">{% trans %}Log in{% endtrans %}</button>
+      </form>
+      <br />
+      <a href="#"><b>Don't have an account yet?</b></a><br />
+      <a href="{{ url('home') }}"><span class="ion-arrow-return-left"></span> Return to homepage</a>
+    </div>
+  </div>
+{% endblock %}

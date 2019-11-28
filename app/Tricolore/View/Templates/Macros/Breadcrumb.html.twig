@@ -1,0 +1,7 @@
+{% macro addChild(title, url) %}
+  {% if url is not empty %}
+    <li><a href="{{ url }}"><span class="default-font">{{ title }}</span></a></li>
+  {% else %}
+    <li><span class="default-font">{{ title }}</span></li>
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,3 @@
+test:
+    path: /my/test
+    defaults: { _controller: Tricolore\Tests\IndexAction:index }

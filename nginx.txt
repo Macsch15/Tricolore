@@ -1,0 +1,19 @@
+server {
+    # Nginx configuration
+
+    location ^~ /app {
+        deny all;
+    }
+
+    location ^~ /lib {
+        deny all;
+    }
+
+    location / {
+        if(!-e $request_filename) {
+            rewrite ^(.*)$ /index.php?/$1 break;
+        }
+    }
+
+    # Nginx configuration
+}

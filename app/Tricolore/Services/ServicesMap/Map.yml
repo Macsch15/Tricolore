@@ -1,0 +1,27 @@
+service-locator:
+    view:
+        class: Tricolore\View\View
+        function: register
+
+    form:
+        class: Tricolore\FormFactory\FormFactory
+        function: getFactory
+
+    translator:
+        class: Tricolore\Translation\Translation
+        function: getTranslator
+
+    finder:
+        class: Symfony\Component\Finder\Finder
+
+    datasource:
+        class: Tricolore\DataSources\DatabaseAdapter
+        function: getDatabaseFactory
+
+    cookiejar:
+        class: Tricolore\HttpExtension\CookieJar\CookieJar
+
+    validator:
+        class: Symfony\Component\Validator\Validation
+        function: createValidator
+        static: true

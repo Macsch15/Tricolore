@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages.xliff">
+        <body>
+            <trans-unit id="1">
+                <source>Example unit</source>
+                <target>Translated unit!</target>
+            </trans-unit>
+
+            <trans-unit id="2">
+                <source>Hello %name%</source>
+                <target>Welcome %name%</target>
+            </trans-unit>
+
+            <trans-unit id="3">
+                <source>There is one apple|There are %count% apples</source>
+                <target>Bob has one apple|Bob has %count% apples</target>
+            </trans-unit>
+
+            <trans-unit id="4">
+                <source>Template trans</source>
+                <target>Translated template</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

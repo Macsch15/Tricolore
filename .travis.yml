@@ -1,17 +1,32 @@
 language: php
 
-sudo: false
+before_install:
+  - echo 'hhvm.libxml.ext_entity_whitelist = file,http,https' > travis.hhvm.ini
+
+addons:
+  postgresql: "9.3"
 
 php:
-  - 7.2
+  - 5.5
+  - 5.6
+  - nightly
+  - hhvm
+  - hhvm-nightly
+
+matrix:
+  allow_failures:
+    - php: nightly
+    - php: hhvm
+    - php: hhvm-nightly
 
 before_script:
-  - composer install
-  - php -r "file_exists('.env') || copy('.env.example', '.env');"
-  - php artisan key:generate
-
-after_success:
-  - travis_retry php vendor/bin/php-coveralls
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --no-interaction
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
-  - ./vendor/bin/phpunit
+  - mkdir -p build/logs
+  - sh -c 'if [ "$TRAVIS_PHP_VERSION" = "hhvm" -o "$TRAVIS_PHP_VERSION" = "hhvm-nightly" ]; then hhvm -c travis.hhvm.ini $HOME/.phpenv/versions/hhvm/bin/phpunit --verbose --coverage-text; else phpunit --verbose --coverage-text; fi;'
+
+after_script:
+  - php vendor/bin/coveralls -v

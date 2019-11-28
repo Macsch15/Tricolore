@@ -1,0 +1,36 @@
+a {
+  &:visited,
+  &:focus,
+  &:active,
+  &:hover {
+    outline: 0 none !important;
+  }
+}
+
+.default-font {
+  font-family: @base-font-family;
+}
+
+.muted-text {
+  &, & a {
+    color: @global-muted-text-color;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.search-icon {
+  .form-control-feedback();
+  left: 0px;
+}
+
+.form-control-search {
+  padding-right: 0;
+  padding-left: 30px;
+}

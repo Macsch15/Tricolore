@@ -1,0 +1,70 @@
+.navbar {
+  margin-bottom: 8px;
+}
+
+.navbar-default {
+  border: none;
+}
+
+.navbar-default .navbar-brand {
+  &, &:hover, &:focus {
+    color: @navbar-brand-color;
+    background: @navbar-brand-background;
+    letter-spacing: 1px;
+    font-size: 22px;
+  }
+}
+
+.navbar-default .navbar-nav {
+  > li > a {
+    color: @navbar-color;
+
+    &:hover,
+    &:focus {
+      color: @navbar-hover-color;
+      background-color: @navbar-hover-background;
+    }
+  }
+
+  > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @navbar-active-hover-color;
+      background-color: @navbar-active-background;
+      border-bottom: @navbar-active-border-width @navbar-hover-border-background @navbar-active-border-type;
+      max-height: 50px;
+    }
+  }
+}
+
+.navbar-default .navbar-toggle {
+  border-color: @navbar-toggle-border-color;
+
+  &:hover, &:focus {
+    background-color: @navbar-toggle-border-color-hover-focus;
+  }
+}
+
+.navbar-default .navbar-collapse, 
+.navbar-default .navbar-form {
+  border: none;
+}
+
+.auth-buttons {
+  padding: @navbar-auth-buttons-padding;
+}
+
+.fast-search-input {
+  width: @navbar-fast-search-input !important;
+}
+
+.fast-search-icon {
+  margin: @navbar-fast-search-icon-margin;
+}
+
+.fast-search-button {
+  background: @navbar-fast-search-button-background;
+  border: @navbar-fast-search-button-border;
+  color: @navbar-fast-search-button-color;
+}

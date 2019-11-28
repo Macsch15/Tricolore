@@ -1,0 +1,3 @@
+service-locator:
+    extra: { class: Tricolore\Tests\Fixtures\ServiceLocatorExtra }
+    extra_func: { class: Tricolore\Tests\Fixtures\ServiceLocatorExtra, function: myFunc }

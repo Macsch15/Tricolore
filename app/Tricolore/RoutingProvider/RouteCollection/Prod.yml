@@ -1,0 +1,25 @@
+home:
+    path: /
+    methods: [GET]
+    defaults: 
+        _controller: Tricolore\Controller\Frontend\IndexAction:index
+
+hello:
+    path: /hello/{name}
+    methods: [GET]
+    requirements: 
+        name: "[A-Za-z0-9-_]+"
+    defaults: 
+        _controller: Tricolore\Controller\Frontend\HelloAction:sayHello
+
+auth:
+    path: /auth
+    methods: [GET, POST]
+    defaults:
+        _controller: Tricolore\Controller\Frontend\Auth:process
+
+admincp_auth:
+    path: /admincp/auth
+    methods: [GET, POST]
+    defaults:
+        _controller: Tricolore\Controller\Backend\Auth:process

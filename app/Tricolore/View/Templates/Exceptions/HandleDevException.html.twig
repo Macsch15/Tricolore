@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{{ config('base.locale') }}">
+  <head>
+    <meta charset="{{ config('base.charset') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exception detected!</title>
+    <link href="{{ assets('css', 'ui.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <main class="container" role="main">
+      <h1>
+        <i class="fa fa-exclamation-circle"></i> Tricolore has crashed <small>{{ exception_name }}</small>
+
+        <div class="pull-right server-error">
+          500 Internal Server Error
+        </div>
+      </h1>
+
+      <div class="jumbotron jumbotron-exception">
+        <div class="exception-message">
+          <h2 {{ exception.getMessage()|length > 80 ? 'class="less-font-size"' : null }}><i class="muted-text fa fa-quote-left"></i>
+            {% if exception.getMessage() is empty %} 
+              <em>(No message)</em>
+            {% else %}
+              {{ exception.getMessage() }}
+            {% endif %}
+          </h2>
+        </div>
+
+        {% if exception_name != 'ErrorException' %}
+          <h4>Exception caught in <code>{{ exception.getTrace().0.class }}->{{ exception.getTrace().0.function }}()</code></h4>
+        {% endif %}
+
+        <small>
+          <em>
+            <b>Location:</b> {{ path_info }}<br />
+            
+            {{ error_file }}:{{ error_line }}
+          </em>
+        </small>
+
+        <pre class="exception-code"><code class="php">
+          {%- if file_array|length >= 20 -%}
+            {%- for line in file_array|slice(error_line - 14, 25) -%}
+              <div {{ loop.index0 == 13 ? 'class="red"' : null }}><div class="pull-left line-number">{{ loop.index + error_line - 14 }}. </div> {{ line|e }}</div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for line in file_array -%}
+              <div {{ loop.index0 == error_line - 1 ? 'class="red"' : null }}><div class="pull-left line-number">{{ loop.index }}. </div> {{ line|e }}</div>
+            {%- endfor -%}
+          {%- endif -%}
+        </code></pre>        
+      </div>
+
+      <div class="jumbotron jumbotron-exception">
+        <h3 class="exception-helpers"><i class="fa fa-code-fork"></i> Call stack</h3>
+
+        {% for key, value in exception.getTrace() %}
+          <div style="margin-left: 20px">
+            <span style="font-size: 41px; float:left; color: #808080; margin-right: 15px">{{ loop.index }}</span>
+
+            {% if value.file is defined %}File: {{ value.file }}{% else %}<del class="muted-text">File: -</del>{% endif %}<br />
+            {% if value.line is defined %}Line: {{ value.line }}{% else %}<del class="muted-text">Line: -</del>{% endif %}<br />
+            {% if value.class is defined and value.function is defined %}Class: <b>{{ value.class }}->{{ value.function }}()</b>{% else %}<del class="muted-text">Class: -</del>{% endif %}<br />
+          </div>
+
+          {% if not loop.last %}
+            <hr />
+          {% endif %}
+        {% endfor %}
+      </div>
+    </main>
+
+    <footer class="container">
+      <div class="pull-right footer">
+        Powered by <a href="https://github.com/Macsch15/Tricolore">Tricolore</a> {{ app.getEnv() == 'dev' ? app.getVersion() : null }}
+      </div>
+    </footer>
+
+    <script src="{{ assets('js', 'highlight.min.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

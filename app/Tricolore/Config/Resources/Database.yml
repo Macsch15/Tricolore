@@ -1,0 +1,36 @@
+adapter: "PostgreSQL"
+
+prod:
+    default:
+        server: ~
+        port: ~
+        database_name: ~
+        table_prefix: ~
+        username: "postgres"
+        password: "root"
+
+dev:
+    default:
+        server: ~
+        port: ~
+        database_name: ~
+        table_prefix: ~
+        username: "postgres"
+        password: "root"
+
+test:
+    default:
+        server: ~
+        port: ~
+        database_name: "tricolore_tests"
+        table_prefix: ~
+        username: "postgres"
+        password: "root"
+
+    travis:
+        server: ~
+        port: ~
+        database_name: "travis_ci_test"
+        table_prefix: ~
+        username: "postgres"
+        password: ~

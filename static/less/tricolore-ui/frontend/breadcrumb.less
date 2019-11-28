@@ -1,0 +1,30 @@
+.breadcrumb {
+  background: @breadcrumb-background;
+  border-radius: 0;
+  padding: 0;
+  color: @breadcrumb-color-inactive;
+  font-weight: bold;
+}
+
+.breadcrumb li {
+  padding: @breadcrumb-list-padding;
+  font-size: @breadcrumb-list-font-size;
+  color: @breadcrumb-list-color;
+}
+
+.breadcrumb li a {
+  color: @breadcrumb-list-color;
+  text-decoration: none;
+}
+
+.breadcrumb li:after {
+  content: @breadcrumb-fontawesome-icon;
+}
+
+.breadcrumb li:last-child:after {
+  content: "\00a0";
+}
+
+.breadcrumb li:first-child:before {
+  content: @breadcrumb-fontawesome-first-child-icon;
+}

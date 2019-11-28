@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="pl" datatype="plaintext" original="messages.xliff">
+        <body>
+            <trans-unit id="1">
+                <source>Page not found</source>
+                <target>Nie znaleziono strony</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>The resource requested could not be found!</source>
+                <target>Nie można znaleźć żądanego zasobu!</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Home</source>
+                <target>Strona główna</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Return to homepage</source>
+                <target>Wróć na stronę główną</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Toggle navigation</source>
+                <target>Przełącz nawigację</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Password</source>
+                <target>Hasło</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Email address or username</source>
+                <target>E-mail lub nazwa użytkownika</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Log in</source>
+                <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>AdminCP Authorization</source>
+                <target>Autoryzacja AdminCP</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Homepage</source>
+                <target>Strona główna</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>GZip compression</source>
+                <target>Kompresja GZip</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Used memory</source>
+                <target>Użyta pamięć</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Database queries</source>
+                <target>Zapytań do bazy</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Authorization</source>
+                <target>Autoryzacja</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Forgot your password?</source>
+                <target>Zapomniane hasło?</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Method not allowed</source>
+                <target>Metoda niedozwolona</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>%method% method is not allowed for this request!</source>
+                <target>Metoda %method% nie jest dozwolona dla tego żądania!</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Loaded classes</source>
+                <target>Załadowane klasy</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>Close</source>
+                <target>Zamknij</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>Search...</source>
+                <target>Szukaj...</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>No match found.</source>
+                <target>Nie znaleziono.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
