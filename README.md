@@ -1,23 +1,16 @@
-#Tricolore [![Build Status](https://img.shields.io/travis/Macsch15/Tricolore.svg?style=flat-square)](https://travis-ci.org/Macsch15/Tricolore) [![Coverage Status](https://img.shields.io/coveralls/Macsch15/Tricolore.svg?style=flat-square)](https://coveralls.io/r/Macsch15/Tricolore?branch=master)
+# Tricolore [![Build Status](https://img.shields.io/travis/Macsch15/Tricolore.svg?style=flat-square)](https://travis-ci.org/Macsch15/Tricolore) [![Coverage Status](https://img.shields.io/coveralls/Macsch15/Tricolore.svg?style=flat-square)](https://coveralls.io/r/Macsch15/Tricolore?branch=master)
 
-#####Discussion software
-*Work in progress...* [Screenshots](https://mega.co.nz/#F!J1oRzArb!F1gfB7x2tIPr2yP94AR7dQ) & [Videos](https://vimeo.com/album/3273403)
+##### Discussion software
+*Work in progress...*
 
-###Environment requirements
+### Environment requirements
 - PHP 5.5 (5.6 recommended)
 - PostgreSQL 9.3 (or later)
 - INTL extension
 - pdo_pgsql extension **(currently unsupported by HHVM)**
 - (optional) zlib
 
-###3-rd party libraries
-- [Symfony](https://github.com/symfony/symfony)
-- [Twig](https://github.com/twigphp/Twig)
-- [jQuery](https://github.com/jquery/jquery)
-- [Carbon](https://github.com/briannesbitt/Carbon)
-- [Bootstrap](https://github.com/twbs/bootstrap)
-
-###Licence
+### Licence
 
 Copyright (c) 2014 Maciej Schmidt
 
