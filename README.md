@@ -3,6 +3,8 @@
 #### Community environment
 *Work in progress...*
 
+[![Image: uEUAxdYfg0SqXwEh0YMvv1n8CbBDz2](https://storage.macsch15.pl/images/uEUAxdYfg0SqXwEh0YMvv1n8CbBDz2.png)](https://storage.macsch15.pl/images/uEUAxdYfg0SqXwEh0YMvv1n8CbBDz2.png)
+
 ### Environment requirements
 - PHP 5.5 (5.6 recommended)
 - PostgreSQL 9.3 (or later)
