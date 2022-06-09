@@ -1,3 +1,3 @@
 # Tricolore
 
-Community environment
+Content Aggregator
