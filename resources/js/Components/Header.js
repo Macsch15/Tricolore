@@ -4,7 +4,7 @@ import { Navbar, NavDropdown, Nav, Container } from 'react-bootstrap';
 export default function Header(auth) {
     return (
         <>
-            <Navbar bg="light" expand="lg">
+            <Navbar className={'navbar-custom'} expand="lg">
                 <Container>
                     <Navbar.Brand href="/">Tricolore</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

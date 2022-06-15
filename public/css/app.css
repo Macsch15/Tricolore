@@ -10269,3 +10269,7 @@ textarea.form-control-lg {
 body {
   background: #eff2f6;
 }
+
+.navbar-custom {
+  background-color: #ffffff;
+}
