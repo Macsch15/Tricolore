@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', static function () {
-    return Inertia::render('Index');
-});
+Route::get('/', 'App\Http\Controllers\Frontend\IndexController@index')->name('frontend.index');
 
 Route::get('/dashboard', static function () {
     return Inertia::render('Dashboard');

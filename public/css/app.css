@@ -10266,3 +10266,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  background: #eff2f6;
+}
