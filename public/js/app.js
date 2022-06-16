@@ -10520,9 +10520,9 @@ function Header(auth) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Link, {
               href: "#home",
               children: "Home"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Link, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Link, {
               href: "#link",
-              children: "Link"
+              children: ["Logged in as: ", auth.auth.user.email]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
               title: "Dropdown",
               id: "basic-nav-dropdown",
@@ -10549,6 +10549,41 @@ function Header(auth) {
 
 /***/ }),
 
+/***/ "./resources/js/Components/ValidationErrors.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/Components/ValidationErrors.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ValidationErrors)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function ValidationErrors(_ref) {
+  var errors = _ref.errors;
+  return Object.keys(errors).length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "mb-4",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: "Whoops! Something went wrong."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+      className: "mt-3",
+      children: Object.keys(errors).map(function (key, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+          children: errors[key]
+        }, index);
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Layouts/Layout.js":
 /*!****************************************!*\
   !*** ./resources/js/Layouts/Layout.js ***!
@@ -10570,13 +10605,130 @@ __webpack_require__.r(__webpack_exports__);
 
 function Layout(_ref) {
   var auth = _ref.auth,
-      header = _ref.header,
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
       auth: auth
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: 'container',
       children: children
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/Login.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Auth/Login.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Login)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/ValidationErrors */ "./resources/js/Components/ValidationErrors.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function Login(_ref) {
+  var status = _ref.status,
+      canResetPassword = _ref.canResetPassword;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    email: '',
+    password: '',
+    remember: ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post,
+      processing = _useForm.processing,
+      errors = _useForm.errors,
+      reset = _useForm.reset;
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return function () {
+      reset('password');
+    };
+  }, []);
+
+  var onHandleChange = function onHandleChange(event) {
+    setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
+  };
+
+  var submit = function submit(e) {
+    e.preventDefault();
+    post(route('login'));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "Log in"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      errors: errors
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+      onSubmit: submit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "mb-3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          htmlFor: "email",
+          className: "form-label",
+          children: "Email address"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          type: "email",
+          onChange: onHandleChange,
+          className: "form-control",
+          name: "email",
+          value: data.email,
+          id: "email"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "mb-3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          htmlFor: "password",
+          className: "form-label",
+          children: "Password"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          type: "password",
+          className: "form-control",
+          name: "password",
+          value: data.password,
+          onChange: onHandleChange,
+          id: "password"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "mb-3 form-check",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          type: "checkbox",
+          name: "remember",
+          value: data.remember,
+          onChange: onHandleChange,
+          className: "form-check-input",
+          id: "remember"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          className: "form-check-label",
+          htmlFor: "remember",
+          children: "Remember me"
+        })]
+      }), canResetPassword && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        href: route('password.request'),
+        className: "float-end",
+        children: "Forgot your password?"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        type: "submit",
+        className: "btn btn-primary",
+        children: "Log in"
+      })]
     })]
   });
 }
@@ -69298,6 +69450,8 @@ module.exports = warning;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Auth/Login": "./resources/js/Pages/Auth/Login.js",
+	"./Auth/Login.js": "./resources/js/Pages/Auth/Login.js",
 	"./Frontend/Index": "./resources/js/Pages/Frontend/Index.js",
 	"./Frontend/Index.js": "./resources/js/Pages/Frontend/Index.js"
 };
